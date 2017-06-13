@@ -1,0 +1,96 @@
+ /* GENERAL */
+      .container-fluid {
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+  		canvas {
+  			border: 5px solid black;
+  		}
+  			* { 
+  				margin: 0; 
+  				padding: 0; 
+  				box-sizing: 
+  				border-box; 
+  			}
+        body { 
+        	font: 15px "Montserrat", sans-serif;; 
+        }
+        
+        form { 
+        	background: #000; 
+        	padding: 3px; 
+        	position: fixed; 
+        	bottom: 0; 
+        	width: 100%; 
+        }
+        
+        form input { 
+        	border: 0; 
+        	padding: 10px; 
+        	width: 90%; 
+        	margin-right: .5%; 
+        	}
+        
+        form button { 
+        	width: 9%; 
+        	background: green; 
+        	border: none; 
+        	padding: 10px;
+        	color: white;
+        }
+
+        #black { 
+          width: 9%; 
+          background: black; 
+          border: none; 
+          padding: 10px;
+          color: white;
+        }
+        #blue { 
+          width: 9%; 
+          background: blue; 
+          border: none; 
+          padding: 10px;
+          color: white;
+        }
+         #red { 
+          width: 9%; 
+          background: red; 
+          border: none; 
+          padding: 10px;
+          color: white;
+        }
+         #yellow { 
+          width: 9%; 
+          background: yellow; 
+          border: none; 
+          padding: 10px;
+          color: black;
+        }
+         #green { 
+          width: 9%; 
+          background: green; 
+          border: none; 
+          padding: 10px;
+          color: white;
+        }
+
+        #messages { 
+        	list-style-type: none; 
+        	padding: 10px; 
+          width: 100%; 
+          border: 2px solid red;
+          max-height: 50px;
+        }
+        
+        #messages li { 
+        	padding: 5px 10px; 
+        }
+        
+        #messages li:nth-child(odd) { 
+        	background: #eee; 
+        }
+        
+        #messages { 
+        	margin-bottom: 40px 
+        }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Draw Together</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head>
+  <body>
+	<!-- DRAWING -->
+    <div class ="container-fluid bg-1 text-center">
+	   <h1>Drawing With Friends</h1>
+	   <canvas width="400" height="400"></canvas>
+	   <script src="/socket.io/socket.io.js"></script>
+     <script src="/static/frontend.js"></script>
+    </div>
+    <div class="container-fluid bg-2 text-center">
+      <h3 class="margin">Pen Color</h3>
+      <p>Change the color your pen is using.</p>
+      <button onclick="changeBlack()" id="black" class="btn btn-default btn-lg">Black</button>
+      <button onclick="changeBlue()" href="#" id="blue" class="btn btn-default btn-lg">Blue</button>
+      <button onclick="changeRed()" id="red" class="btn btn-default btn-lg">Red</button>
+      <button onclick="changeYellow()" id="yellow" class="btn btn-default btn-lg">Yellow</button>
+      <button onclick="changeGreen()" id="green" class="btn btn-default btn-lg">Green</button>
+      <button onclick="changeEraser()" id="eraser" class="btn btn-default btn-lg">Eraser</button>
+    </div>
+    <div class="container-fluid bg-3 text-center">
+      <h3 class="margin">Pen Thickness</h3>
+      <p>Change the size of your pen.</p>
+      <button onclick="changeThin()" class="btn btn-default btn-lg">Thin</button>
+      <button onclick="changeMedium()" class="btn btn-default btn-lg">Medium</button>
+      <button onclick="changeThick()" class="btn btn-default btn-lg">Thick</button>
+    </div>
+    <div classclass="container-fluid bg-4 text-center">
+	<!-- CHAT -->
+  	<ul id="messages"></ul>
+      <form action="">
+        <input id="m" autocomplete="off" /><button>Send</button>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+      $(function () {
+        var socket = io();
+        $('form').submit(function(){
+          socket.emit('chat message', $('#m').val());
+          console.log($('#m').val());
+          $('#m').val('');
+          return false;
+        });
+        socket.on('chat message', function(msg){
+          $('#messages').append($('<li>').text(msg));
+          window.scrollTo(0, document.body.scrollHeight);
+        });
+      });
+    </script>
+  </body>
+</html>
