@@ -16,15 +16,13 @@
 
  /* GENERAL */
 .container-fluid {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 canvas {
   border: 5px solid black;
 }
-
-
 
 body { 
   font: 15px "Montserrat", sans-serif;; 
@@ -40,13 +38,13 @@ form {
 form input { 
   border: 0; 
   padding: 10px; 
-  width: 90%; 
+  width: 98%; 
   margin-right: .5%;
   border-radius: 10px; 
 }
 /* BUTTONS */        
 #send { 
-  width: 9%; 
+  width: 98%;
   background: green; 
   border: none; 
   padding: 10px;
@@ -54,7 +52,7 @@ form input {
 }
 
 #black { 
-  width: 9%; 
+  width: 15%; 
   background: black; 
   border: none; 
   padding: 10px;
@@ -62,7 +60,7 @@ form input {
 }
 
 #blue { 
-  width: 9%; 
+  width: 15%; 
   background: blue; 
   border: none; 
   padding: 10px;
@@ -70,7 +68,7 @@ form input {
 }
 
 #red { 
-  width: 9%; 
+  width: 15%; 
   background: red; 
   border: none; 
   padding: 10px;
@@ -78,32 +76,55 @@ form input {
 }
          
 #yellow { 
-  width: 9%; 
+  width: 15%; 
   background: yellow; 
   border: none; 
   padding: 10px;
   color: black;
 }
-#green { 
-  width: 9%; 
+#green {  
+  width: 15%; 
   background: green; 
   border: none; 
   padding: 10px;
   color: white;
 }
-#eraser { 
-  width: 9%; 
+#eraser {  
+  width: 15%; 
   background: white; 
   border: 1px solid black; 
   padding: 10px;
   color: black;
+}
+
+#thin { 
+  width: 25%; 
+  background: black; 
+  border: none; 
+  padding: 10px;
+  color: white;
+}
+
+#medium { 
+  width: 25%; 
+  background: black; 
+  border: none; 
+  padding: 10px;
+  color: white;
+}
+
+#thick { 
+  width: 25%; 
+  background: black; 
+  border: none; 
+  padding: 10px;
+  color: white;
 }
         
 /* MESSAGES */
  #messages { 
   list-style-type: none; 
   padding: 10px; 
-  border: 2px solid red;
   border-radius: 10px;
 
 }
@@ -114,6 +135,13 @@ form input {
         
 #messages li:nth-child(odd) { 
   background: #eee; 
+  border-radius: 15px; 
+}
+
+#messages li:nth-child(even) { 
+  color: white;
+  border-radius: 15px;
+  border: 1px solid white; 
 }      
  /* FOOTER */
 .bg-4 {

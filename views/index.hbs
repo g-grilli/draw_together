@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <title>Draw Together</title>
+    <title>Draw Together</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
@@ -30,10 +30,11 @@
       </div>
     </div>
   </nav>
-	<!-- DRAWING -->
+  <!-- DRAWING -->
     <div class ="container-fluid bg-1 text-center">
-	   <h1>Drawing With Friends</h1>
-	   <canvas class="img-responsive" width="600" height="600" style="display:inline"></canvas>
+     <h1>Drawing With Friends</h1>
+     <canvas class="img-responsive" width="600" height="600" style="display:inline"></canvas>
+     <p>Use your mouse to draw your image.</p>
     </div>
     <div class="container-fluid bg-2 text-center">
       <h3 class="margin">Pen Color</h3>
@@ -64,12 +65,20 @@
         </div>
       </div>
     </div>
+    
+<!-- CHAT -->
     <div classclass="container-fluid text-center">
-	<!-- CHAT -->
-
       <form action=""> 
-        <ul id="messages"></ul>      
-        <input id="m" autocomplete="off"><button id="send" class="btn btn-default btn-md">Send</button>
+        <div class="row">
+          <div class="col-sm-6">
+            <input id="m" autocomplete="off">
+          </div>
+          <div class="col-sm-1">
+            <button id="send" class="btn btn-default btn-sm">Send</button>
+          </div>
+          <div class="col-sm-5">     
+            <ul id="messages"></ul>
+          </div>
       </form>
   </div>
 <!-- FOOTER -->
@@ -99,7 +108,7 @@
           return false;
         });
         socket.on('chat message', function(msg){
-          $('#messages').append($('<li>').text(msg));
+          $('#messages').prepend($('<li>').text(msg));
           window.scrollTo(0, document.body.scrollHeight);
         });
       });
