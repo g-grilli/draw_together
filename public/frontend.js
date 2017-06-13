@@ -40,6 +40,10 @@ function changeThick() {
 	lineWidth = 10.0;
 };
 
+function changeBlack() {
+  color = 'black';
+};
+
 server.on('line-broadcast', function (msg) {
   draw(msg.past, msg.current, msg.color, msg.width);
 });
@@ -92,34 +96,5 @@ canvas.addEventListener('mousemove', function (event) {
   }
 });
 
-canvas.addEventListener('touchend', function (event) {
-  mouse_down = false;
-  past = null;
-  console.log('UP', event.offsetX, event.offsetY);
-});
 
 
-canvas.addEventListener('touchstart', function (event) {
-  mouse_down = true;
-  console.log('DOWN', event.offsetX, event.offsetY);
-});
-
-canvas.addEventListener('touchend', function (event) {
-  mouse_down = false;
-  past = null;
-  console.log('UP', event.offsetX, event.offsetY);
-});
-
-
-canvas.addEventListener('touchmove', function (event) {
-  if (mouse_down) {
-    current = [event.offsetX, event.offsetY];
-    console.log('MOVE', event.offsetX, event.offsetY);
-    if (past) {
-      server.emit('draw-line', {past: past, current: current, color: color, width: lineWidth});
-      //draw(past, current);
-    }
-    
-    past = [event.offsetX, event.offsetY];
-  }
-});

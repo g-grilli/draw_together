@@ -23,7 +23,7 @@
       <div class="collapse navbar-collapse" id ="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">DRAWING</a></li>
-          <li><a href="#">PHOTOS</a></li>
+          <li><a href="#">BLACKJACK</a></li>
           <li><a href="#">FOOD</a></li>
           <li><a href="#">CONTACT</a></li>
         </ul>
@@ -59,9 +59,9 @@
       <p>Change the size of your pen.</p>
       <div class="row">
         <div class="col-sm-12">
-          <button onclick="changeThin()" class="btn btn-default btn-sm">Thin</button>
-          <button onclick="changeMedium()" class="btn btn-default btn-sm">Medium</button>
-          <button onclick="changeThick()" class="btn btn-default btn-sm">Thick</button>
+          <button onclick="changeThin()" id="thin" class="btn btn-default btn-sm">Thin</button>
+          <button onclick="changeMedium()" id="medium" class="btn btn-default btn-sm">Medium</button>
+          <button onclick="changeThick()" id="thick" class="btn btn-default btn-sm">Thick</button>
         </div>
       </div>
     </div>
@@ -72,13 +72,13 @@
         <div class="row">
           <div class="col-sm-6">
             <input id="m" autocomplete="off">
-          </div>
-          <div class="col-sm-1">
             <button id="send" class="btn btn-default btn-sm">Send</button>
           </div>
-          <div class="col-sm-5">     
+          <div class="col-sm-6">
+            <button onclick="clearMessages()" id="clear" class="btn btn-default btn-sm">Clear</button>     
             <ul id="messages"></ul>
           </div>
+        </div>
       </form>
   </div>
 <!-- FOOTER -->
@@ -98,7 +98,7 @@
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/static/frontend.js"></script>
-  <script>
+    <script>
       $(function () {
         var socket = io();
         $('form').submit(function(){

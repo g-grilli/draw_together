@@ -19,6 +19,9 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.row {
+  margin-bottom: 2px;
+}
 
 canvas {
   border: 5px solid black;
@@ -38,14 +41,21 @@ form {
 form input { 
   border: 0; 
   padding: 10px; 
-  width: 98%; 
+  width: 83%; 
   margin-right: .5%;
   border-radius: 10px; 
 }
 /* BUTTONS */        
 #send { 
-  width: 98%;
-  background: green; 
+  width: 15%;
+  background: #2F72FF; 
+  border: none; 
+  padding: 10px;
+  color: white;
+}
+#clear { 
+  width: 15%;
+  background: #2F72FF; 
   border: none; 
   padding: 10px;
   color: white;
@@ -98,24 +108,24 @@ form input {
 }
 
 #thin { 
-  width: 25%; 
-  background: black; 
+  width: 15%; 
+  background: #2F72FF; 
   border: none; 
   padding: 10px;
   color: white;
 }
 
 #medium { 
-  width: 25%; 
-  background: black; 
+  width: 15%; 
+  background: #2F72FF; 
   border: none; 
   padding: 10px;
   color: white;
 }
 
 #thick { 
-  width: 25%; 
-  background: black; 
+  width: 15%; 
+  background: #2F72FF; 
   border: none; 
   padding: 10px;
   color: white;
@@ -124,13 +134,17 @@ form input {
 /* MESSAGES */
  #messages { 
   list-style-type: none; 
+  border: 0; 
   padding: 10px; 
+  width: 83%; 
+  margin-right: .5%;
   border-radius: 10px;
 
 }
         
 #messages li { 
-  padding: 5px 10px; 
+  padding: 5px 10px;
+  height: 30px; 
 }
         
 #messages li:nth-child(odd) { 
@@ -145,7 +159,7 @@ form input {
 }      
  /* FOOTER */
 .bg-4 {
-  background-color: #5f9ea0; /* cadet blue */
+  background-color: blue; /* cadet blue */
   color: #ffffff;
 }
 
