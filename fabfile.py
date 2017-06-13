@@ -3,7 +3,7 @@ from fabric.api import run, env, sudo, cd, prefix, shell_env
 env.hosts = ['45.32.193.114']
 env.user = 'ggrilli'
 
-DIR = '/Users/ggrilli/github/draw_together'
+DIR = '/home/ggrilli/draw_together'
 VENV = 'echo Hello'
 
 def start ():
